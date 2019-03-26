@@ -1,0 +1,13 @@
+{
+  "description": "dow core's demo for wepy",
+  "setting": {
+    "urlCheck": true,
+    "es6": false,
+    "postcss": false,
+    "minified": false
+  },
+  "compileType": "miniprogram",
+  "appid": "touristappid",
+  "projectname": "dow_wepy_demo",
+  "miniprogramRoot": "./dist"
+}
