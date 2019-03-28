@@ -1,4 +1,7 @@
 <style lang="less">
+@import './styles/base';
+@import './styles/icon';
+@import './styles/style';
 .container {
   height: 100%;
   display: flex;
@@ -25,10 +28,39 @@ export default class extends wepy.app {
       'pages/index'
     ],
     window: {
-      backgroundTextStyle: 'light',
-      navigationBarBackgroundColor: '#fff',
+      backgroundTextStyle: 'dark',
+      navigationBarBackgroundColor: '#FFFFFF',
       navigationBarTitleText: 'WeChat',
-      navigationBarTextStyle: 'black'
+      navigationBarTextStyle: 'black',
+      enablePullDownRefresh: false,
+      backgroundColor: '#EFEFEF'
+    },
+    'tabBar': {
+      'color': '#999999',
+      'selectedColor': '#ff6a3c',
+      'backgroundColor': '#ffffff',
+      'borderStyle': 'black',
+      'list': [{
+        'pagePath': 'pages/index',
+        'text': '首页',
+        'iconPath': 'images/icon_home.png',
+        'selectedIconPath': 'images/icon_home_active.png'
+      }, {
+        'pagePath': 'pages/index',
+        'text': '视频',
+        'iconPath': 'images/icon_classify.png',
+        'selectedIconPath': 'images/icon_classify_active.png'
+      }, {
+        'pagePath': 'pages/index',
+        'text': '新闻',
+        'iconPath': 'images/icon_shop_cart.png',
+        'selectedIconPath': 'images/icon_shop_cart_active.png'
+      }, {
+        'pagePath': 'pages/index',
+        'text': '图书',
+        'iconPath': 'images/icon_info.png',
+        'selectedIconPath': 'images/icon_info_active.png'
+      }]
     }
   }
 
@@ -36,12 +68,12 @@ export default class extends wepy.app {
     userInfo: null
   }
 
-  constructor () {
+  constructor() {
     super()
     this.use('requestfix')
   }
 
-  onLaunch() {
+  onLaunch () {
     this.testAsync()
   }
 
@@ -58,7 +90,7 @@ export default class extends wepy.app {
     console.log(data)
   }
 
-  getUserInfo(cb) {
+  getUserInfo (cb) {
     const that = this
     if (this.globalData.userInfo) {
       return this.globalData.userInfo
