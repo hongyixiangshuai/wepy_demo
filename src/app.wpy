@@ -25,7 +25,7 @@ setStore(store)
 export default class extends wepy.app {
   config = {
     pages: [
-      'pages/index'
+      'pages/video'
     ],
     window: {
       backgroundTextStyle: 'dark',
@@ -41,23 +41,23 @@ export default class extends wepy.app {
       'backgroundColor': '#ffffff',
       'borderStyle': 'black',
       'list': [{
-        'pagePath': 'pages/index',
-        'text': '首页',
+        'pagePath': 'pages/video',
+        'text': '视频',
         'iconPath': 'images/icon_home.png',
         'selectedIconPath': 'images/icon_home_active.png'
       }, {
-        'pagePath': 'pages/index',
+        'pagePath': 'pages/video',
         'text': '视频',
         'iconPath': 'images/icon_classify.png',
         'selectedIconPath': 'images/icon_classify_active.png'
       }, {
-        'pagePath': 'pages/index',
+        'pagePath': 'pages/video',
         'text': '新闻',
         'iconPath': 'images/icon_shop_cart.png',
         'selectedIconPath': 'images/icon_shop_cart_active.png'
       }, {
-        'pagePath': 'pages/index',
-        'text': '图书',
+        'pagePath': 'pages/video',
+        'text': '我',
         'iconPath': 'images/icon_info.png',
         'selectedIconPath': 'images/icon_info_active.png'
       }]
@@ -70,6 +70,7 @@ export default class extends wepy.app {
 
   constructor() {
     super()
+    this.use('promisify')
     this.use('requestfix')
   }
 
