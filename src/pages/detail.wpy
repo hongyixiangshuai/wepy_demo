@@ -111,7 +111,7 @@ export default class Detail extends wepy.page {
     gotoDetail (item) {
       this.videoContext.pause()
       wepy.$instance.globalData.selectedItem = item
-      let pagesCount = getCurrentPages().length
+      let pagesCount = this.getCurrentPages().length
       console.log('pagesCount: ' + pagesCount)
       if (pagesCount > 5) {
         wepy.redirectTo({
@@ -237,6 +237,10 @@ export default class Detail extends wepy.page {
       title: this.item.title,
       path: '/pages/detail?item=' + this.item.id
     }
+  }
+
+  getCurrentPages () {
+    return '1234'
   }
 }
 </script>
