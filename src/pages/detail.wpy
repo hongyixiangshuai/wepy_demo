@@ -111,17 +111,9 @@ export default class Detail extends wepy.page {
     gotoDetail (item) {
       this.videoContext.pause()
       wepy.$instance.globalData.selectedItem = item
-      let pagesCount = this.getCurrentPages().length
-      console.log('pagesCount: ' + pagesCount)
-      if (pagesCount > 5) {
-        wepy.redirectTo({
-          url: 'detail'
-        })
-      } else {
-        wepy.navigateTo({
-          url: 'detail'
-        })
-      }
+      wepy.navigateTo({
+        url: 'detail'
+      })
     },
     onPlay () {
       wepy.reportAnalytics('play_video', {
